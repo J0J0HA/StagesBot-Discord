@@ -1,6 +1,7 @@
 # StagesBot
 
-> :information_source: There is also an english version of this document: [README.en.md](README.en.md)
+> **Note**  
+> There is also an english version of this document: [README.en.md](README.en.md)
 
 Eine Alternative zu dem Discord-Stages-Kanal, wenn man "Communtiy" nicht aktivieren möchte.
 
