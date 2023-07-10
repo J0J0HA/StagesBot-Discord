@@ -1,3 +1,4 @@
+import os
 import yaml
 from typing import Dict
 
@@ -35,6 +36,11 @@ class Stage:
 class Config:
     def __init__(self, path: str = "config.yml") -> None:
         self.PATH = path
+        
+        if not os.path.exists(path):
+            with open(path, "w", encoding="UTF-8") as file:
+                yaml.dump({}, file, yaml.Dumper)
+        
         with open(path, "r", encoding="UTF-8") as file:
             self.RAW = yaml.load(file, yaml.Loader) or {}
 
