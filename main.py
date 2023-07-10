@@ -133,11 +133,17 @@ async def create(
 async def allow_speak(
     interaction: nextcord.Interaction, name: str, member: nextcord.Member
 ):
+    
     if not name in config.STAGES_BY_NAME:
         await interaction.send(f"No stage named '{name}' found.", ephemeral=True)
         return
 
     stage = config.STAGES_BY_NAME[name]
+    if not (stage.ROLE_ID_ADMIN == interaction.user.id or interaction.user.top_role.permissions.manage_channels or interaction.guild.owner_id == interaction.user.id):
+        await interaction.send(
+            "You are not the administrator of this stages-channel, or an administrator.", ephemeral=True
+        )
+        return
     if not stage.ASK_TO_SPEAK:
         await interaction.send(
             "ask-to-speak is not enabled, and therefore this command is deactivated.",
@@ -161,6 +167,11 @@ async def disallow_speak(
         return
 
     stage = config.STAGES_BY_NAME[name]
+    if not (stage.ROLE_ID_ADMIN == interaction.user.id or interaction.user.top_role.permissions.manage_channels or interaction.guild.owner_id == interaction.user.id):
+        await interaction.send(
+            "You are not the administrator of this stages-channel, or an administrator.", ephemeral=True
+        )
+        return
     if not stage.ASK_TO_SPEAK:
         await interaction.send(
             "ask-to-speak is not enabled, and therefore this command is deactivated.",
@@ -185,6 +196,11 @@ async def allow_listen(
         return
 
     stage = config.STAGES_BY_NAME[name]
+    if not (stage.ROLE_ID_ADMIN == interaction.user.id or interaction.user.top_role.permissions.manage_channels or interaction.guild.owner_id == interaction.user.id):
+        await interaction.send(
+            "You are not the administrator of this stages-channel, or an administrator.", ephemeral=True
+        )
+        return
     if not stage.ASK_TO_LISTEN:
         await interaction.send(
             "ask-to-listen is not enabled, and therefore this command is deactivated.",
@@ -207,6 +223,11 @@ async def disallow_listen(
         return
 
     stage = config.STAGES_BY_NAME[name]
+    if not (stage.ROLE_ID_ADMIN == interaction.user.id or interaction.user.top_role.permissions.manage_channels or interaction.guild.owner_id == interaction.user.id):
+        await interaction.send(
+            "You are not the administrator of this stages-channel, or an administrator.", ephemeral=True
+        )
+        return
     if not stage.ASK_TO_LISTEN:
         await interaction.send(
             "ask-to-listen is not enabled, and therefore this command is deactivated.",
@@ -229,6 +250,11 @@ async def ban(interaction: nextcord.Interaction, name: str, member: nextcord.Mem
         return
 
     stage = config.STAGES_BY_NAME[name]
+    if not (stage.ROLE_ID_ADMIN == interaction.user.id or interaction.user.top_role.permissions.manage_channels or interaction.guild.owner_id == interaction.user.id):
+        await interaction.send(
+            "You are not the administrator of this stages-channel, or an administrator.", ephemeral=True
+        )
+        return
     role_banned = interaction.guild.get_role(stage.ROLE_ID_BANNED)
     await member.add_roles(role_banned)
     await member.move_to(None)
@@ -244,6 +270,11 @@ async def unban(interaction: nextcord.Interaction, name: str, member: nextcord.M
         return
 
     stage = config.STAGES_BY_NAME[name]
+    if not (stage.ROLE_ID_ADMIN == interaction.user.id or interaction.user.top_role.permissions.manage_channels or interaction.guild.owner_id == interaction.user.id):
+        await interaction.send(
+            "You are not the administrator of this stages-channel, or an administrator.", ephemeral=True
+        )
+        return
     role_banned = interaction.guild.get_role(stage.ROLE_ID_BANNED)
     await member.remove_roles(role_banned)
     await interaction.send(
@@ -259,6 +290,11 @@ async def delete(interaction: nextcord.Interaction, name: str):
         return
 
     stage = config.STAGES_BY_NAME[name]
+    if not (stage.ROLE_ID_ADMIN == interaction.user.id or interaction.user.top_role.permissions.manage_channels or interaction.guild.owner_id == interaction.user.id):
+        await interaction.send(
+            "You are not the administrator of this stages-channel, or an administrator.", ephemeral=True
+        )
+        return
     await interaction.guild.get_channel(stage.CHANNEL_ID).delete()
     if stage.ASK_TO_SPEAK:
         await interaction.guild.get_role(stage.ROLE_ID_SPEAKER).delete()
