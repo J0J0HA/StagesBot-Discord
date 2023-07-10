@@ -63,6 +63,12 @@ async def create(
     ask_to_speak: bool = True,
     ask_to_join: bool = False,
 ):
+    if not (interaction.user.top_role.permissions.manage_channels or interaction.guild.owner_id == interaction.user.id):
+        await interaction.send(
+            "You are not an administrator.", ephemeral=True
+        )
+        return
+    
     if name in config.STAGES_BY_NAME:
         await interaction.send(
             f"There is already a stage named '{name}'.", ephemeral=True
