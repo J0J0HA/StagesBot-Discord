@@ -46,12 +46,12 @@ async def help(interaction: nextcord.Interaction):
         """**Commands**:
 - `/stages create name:<NAME> [ask_to_speak:<ATS> ask_to_join:<ATJ>]` - Creates a Stages voice channel with the name <NAME>. If <ATS> is True, others must first be given permission to speak. If <ATJ> is true, others must first be given permission to listen.
 - `/stages delete name:<NAME>` - Deletes a Stages voice channel named <NAME>
-- `/stages allow_speak name:<NAME> mamber:<MEMBER>` - Allows user <MEMBER> to speak with name <NAME> in Stages voice channel.
-- `/stages disallow_speak name:<NAME> mamber:<MEMBER>` - Revokes the permission.
-- `/stages allow_listen name:<NAME> mamber:<MEMBER>` - Allows user <MEMBER> to listen in Stages voice channel with name <NAME>.
-- `/stages disallow_listen name:<NAME> mamber:<MEMBER>` - Revokes the permission.
-- `/stages ban name:<NAME> mamber:<MEMBER>` - Hides Stages voice channel with name <NAME> for user <MEMBER> and prevents him from joining.
-- `/stages unban name:<NAME> mamber:<MEMBER>` - Unban.""",
+- `/stages allow_speak name:<NAME> member:<MEMBER>` - Allows user <MEMBER> to speak with name <NAME> in Stages voice channel.
+- `/stages disallow_speak name:<NAME> member:<MEMBER>` - Revokes the permission.
+- `/stages allow_listen name:<NAME> member:<MEMBER>` - Allows user <MEMBER> to listen in Stages voice channel with name <NAME>.
+- `/stages disallow_listen name:<NAME> member:<MEMBER>` - Revokes the permission.
+- `/stages ban name:<NAME> member:<MEMBER>` - Hides Stages voice channel with name <NAME> for user <MEMBER> and prevents him from joining.
+- `/stages unban name:<NAME> member:<MEMBER>` - Unban.""",
         ephemeral=True,
     )
 

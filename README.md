@@ -29,9 +29,9 @@ guild-id: 123 # Deine Guild-ID
 
 - `/stages create name:<NAME> [ask_to_speak:<ATS> ask_to_join:<ATJ>]` - Erstellt einen Stages-Sprachkanal mit dem Namen `<NAME>`. Wenn `<ATS>` ``True`` ist, müssen andere erst die Erlaubnis bekommen, Sprechen zu dürfen. Wenn `<ATJ>` ``True`` ist, müssen andere erst die Erlaubnis bekommen, zuzuhören.
 - `/stages delete name:<NAME>` - Löscht einen Stages-Sprachkanal mit dem Namen `<NAME>`
-- `/stages allow_speak name:<NAME> mamber:<MEMBER>` - Erlaubt dem Nutzer `<MEMBER>`, im Stages-Sprachkanal mit dem Namen `<NAME>` zu sprechen.
-- `/stages disallow_speak name:<NAME> mamber:<MEMBER>` - Hebt die Erlaubnis auf.
-- `/stages allow_listen name:<NAME> mamber:<MEMBER>` - Erlaubt dem Nutzer `<MEMBER>`, im Stages-Sprachkanal mit dem Namen `<NAME>` zuzuhören.
-- `/stages disallow_listen name:<NAME> mamber:<MEMBER>` - Hebt die Erlaubnis auf.
-- `/stages ban name:<NAME> mamber:<MEMBER>` - Verbirgt den Stages-Sprachkanal mit dem Namen `<NAME>` für den Nutzer Nutzer `<MEMBER>` und verhindert sein Beitreten.
-- `/stages unban name:<NAME> mamber:<MEMBER>` - Hebt den Ban auf.
+- `/stages allow_speak name:<NAME> member:<MEMBER>` - Erlaubt dem Nutzer `<MEMBER>`, im Stages-Sprachkanal mit dem Namen `<NAME>` zu sprechen.
+- `/stages disallow_speak name:<NAME> member:<MEMBER>` - Hebt die Erlaubnis auf.
+- `/stages allow_listen name:<NAME> member:<MEMBER>` - Erlaubt dem Nutzer `<MEMBER>`, im Stages-Sprachkanal mit dem Namen `<NAME>` zuzuhören.
+- `/stages disallow_listen name:<NAME> member:<MEMBER>` - Hebt die Erlaubnis auf.
+- `/stages ban name:<NAME> member:<MEMBER>` - Verbirgt den Stages-Sprachkanal mit dem Namen `<NAME>` für den Nutzer Nutzer `<MEMBER>` und verhindert sein Beitreten.
+- `/stages unban name:<NAME> member:<MEMBER>` - Hebt den Ban auf.
